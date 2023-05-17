@@ -31,3 +31,7 @@
 * npm i @prisma/client
 
 - [X] npm i @fastify/cors
+
+- [X] npm i dotenv -D
+
+- [X] npm i axios
