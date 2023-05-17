@@ -29,3 +29,5 @@
 -> npx prisma studio
 
 * npm i @prisma/client
+
+- [X] npm i @fastify/cors
