@@ -11,3 +11,9 @@
 - [X] npm i -D react-native-svg-transformer
 
 -[X] npx expo start --clear
+
+-[X] npx expo install expo-auth-session expo-crypto
+
+-[X] npm i axios
+
+- [X] npx expo install expo-secure-store
