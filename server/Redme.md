@@ -35,3 +35,5 @@
 - [X] npm i dotenv -D
 
 - [X] npm i axios
+
+- [X] npm i jwt-decode

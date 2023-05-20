@@ -6,29 +6,31 @@ export async function memoriesRoutes(app: FastifyInstance) {
   app.addHook('preHandler', async (request) => {
     await request.jwtVerify()
   })
-  
-app.get('/profile', async () => {
-  return [
-    ' ----------------  < NLW >  ----------------',
-    ' |                                         |',
-    ' |                SpaceTime                |',
-    ' |                                         |',
-    ' ----------- < Trilha Node.js > -----------',
-    ' |                                         |',
-    ' |                  API                    |',
-    ' |                                         |',
-    ' ------------- < BORA CODAR > -------------',
-    '                                           ',
-    'Nome: Alisson de Andrade Araújo',
-    'Formação: Análise e Desenvolvimento de Sistemas',
-    'Descrição: Desenvolvedor Back-end, Front-end e Mobile',
-    'Site: http://alissondeandradearaujo.000webhostapp.com/',
-    'Currículo Lattes: http://lattes.cnpq.br/7594653859194302/',
-    'Github: https://github.com/alissonandrade2020',
-    'Rocketseat: https://app.rocketseat.com.br/me/alissondeandradearaujo',
-    'Linkedin: https://www.linkedin.com/in/alisson-de-andrade-ara%C3%BAjo-160224190/',
-  ]
-})
+
+  app.get('/profile', async () => {
+    return [
+      ' ----------------  < NLW >  ----------------',
+      ' |                                         |',
+      ' |                SpaceTime                |',
+      ' |                                         |',
+      ' ----------- < Trilha Node.js > -----------',
+      ' |                                         |',
+      ' |                  API                    |',
+      ' |                                         |',
+      ' ------------- < BORA CODAR > -------------',
+      '                                           ',
+      'Nome: Alisson de Andrade Araújo',
+      'Formação: Análise e Desenvolvimento de Sistemas',
+      'Descrição: Desenvolvedor Back-end, Front-end e Mobile',
+      'Site: http://alissondeandradearaujo.000webhostapp.com/',
+      'Currículo Lattes: http://lattes.cnpq.br/7594653859194302/',
+      'Github: https://github.com/alissonandrade2020',
+      'Rocketseat: https://app.rocketseat.com.br/me/alissondeandradearaujo',
+      'Linkedin: https://www.linkedin.com/in/alisson-de-andrade-ara%C3%BAjo-160224190/',
+    ]
+  })
+
+
 
   app.get('/memories', async (request) => {
     const memories = await prisma.memory.findMany({
@@ -45,6 +47,7 @@ app.get('/profile', async () => {
         id: memory.id,
         coverUrl: memory.coverUrl,
         excerpt: memory.content.substring(0, 115).concat('...'),
+        createdAt: memory.createdAt,
       }
     })
   })
